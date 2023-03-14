@@ -8,6 +8,7 @@ public class Main {//holaworld
         arbolito.addNodo(new Nodo(3));
         arbolito.addNodo(new Nodo(1));
         System.out.println("Inorden:");
+        System.out.println("pancho");
         arbolito.inorden();
     }
 }
