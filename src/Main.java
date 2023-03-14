@@ -1,4 +1,4 @@
-public class Main {
+public class Main {//holaworld
     public static void main(String[] args) {
         Arbol arbolito = new Arbol(4);
         arbolito.addNodo(new Nodo(2));
