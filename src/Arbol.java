@@ -51,7 +51,6 @@ public class Arbol {
         if (nodo.getHojaIzquierda() != null) {
             this.recorridoInorden(nodo.getHojaIzquierda());
         }
-
         System.out.print(nodo.getValor() + " ");
         if (nodo.getHojaDerecha() != null) {
             this.recorridoInorden(nodo.getHojaDerecha());
@@ -59,11 +58,21 @@ public class Arbol {
 
     }
 
+
     public void inorden() {
         this.recorridoInorden(this.raiz);
     }
 
+
     private void recorridoPreorden(Nodo nodo) {
+        if (nodo != null) {
+            this.recorridoPreorden(nodo.getHojaIzquierda());
+        }
+
+        if (nodo.getHojaDerecha() != null) {
+            this.recorridoPreorden(nodo.getHojaDerecha());
+        }
+        System.out.print(nodo.getValor() + " ");
     }
 
     public void preorden() {
@@ -71,6 +80,14 @@ public class Arbol {
     }
 
     private void recorridoPostorden(Nodo nodo) {
+
+        if (nodo.getHojaIzquierda() != null) {
+            this.recorridoInorden(nodo.getHojaIzquierda());
+        }
+        if (nodo.getHojaDerecha() != null) {
+            this.recorridoInorden(nodo.getHojaDerecha());
+        }
+        System.out.print(nodo.getValor() + " ");
     }
 
     public void postorden() {
@@ -175,14 +192,16 @@ public class Arbol {
     }
 
     public static void main(String[] args) {
-        Arbol arbolito = new Arbol(4);
-        arbolito.addNodo(new Nodo(2));
-        arbolito.addNodo(new Nodo(5));
-        arbolito.addNodo(new Nodo(6));
-        arbolito.addNodo(new Nodo(7));
-        arbolito.addNodo(new Nodo(3));
-        arbolito.addNodo(new Nodo(1));
+        Arbol arbolito = new Arbol(42);
+        arbolito.addNodo(new Nodo(24));
+        arbolito.addNodo(new Nodo(52));
+        arbolito.addNodo(new Nodo(6123));
+        arbolito.addNodo(new Nodo(75));
+        arbolito.addNodo(new Nodo(33));
+        arbolito.addNodo(new Nodo(13));
         System.out.println("Inorden:");
         arbolito.inorden();
+        System.out.println();
+        arbolito.postorden();
     }
 }
