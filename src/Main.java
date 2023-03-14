@@ -10,5 +10,6 @@ public class Main {//holaworld
         System.out.println("Inorden:");
         System.out.println("pancho");
         arbolito.inorden();
+        int a;
     }
 }
